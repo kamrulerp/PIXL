@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,35 +8,35 @@
     <title>PIXL</title>
   </head>
   <body
-    class="p-2 bg-pixl-dark text-pixl-light h-dvh w-full md:overflow-clip relative flex flex-col md:block"
+    class="bg-pixl-dark text-pixl-light relative flex h-dvh w-full flex-col p-2 md:block md:overflow-clip"
   >
     <div class="fixed inset-0 overflow-clip">
       <img
         src="\images\Official-Login-BG.png"
         alt="bg"
-        class="h-full w-full inset-y-0 left-[15%] absolute object-cover mask-l-from-80% opacity-30"
+        class="absolute inset-y-0 left-[15%] h-full w-full mask-l-from-80% object-cover opacity-30"
       />
     </div>
 
     <main
-      class="max-md:pt-16 grid place-items-center md:h-full isolate max-w-[1200px] mx-auto px-8"
+      class="isolate mx-auto grid max-w-[1200px] place-items-center px-8 max-md:pt-16 md:h-full"
     >
       <div
-        class="flex flex-col md:flex-row gap-8 md:gap-16 justify-between items-center w-full"
+        class="flex w-full flex-col items-center justify-between gap-8 md:flex-row md:gap-16"
       >
         <!--Logo + word stack -->
         <div>
-          <div class="flex gap-3 items-baseline">
+          <div class="flex items-baseline gap-3">
             <img src="images/logo.png" alt="" />
             <div
               aria-hidden="true"
-              class="hidden md:block uppercase text-4xl text-pixl relative"
+              class="text-pixl relative hidden text-4xl uppercase md:block"
             >
               <!--top-->
               <div
-                class="absolute opacity-20 flex flex-col gap-2 my-2 bottom-full"
+                class="absolute bottom-full my-2 flex flex-col gap-2 opacity-20"
               >
-                <div class="opacity-50 flex flex-col gap-2">
+                <div class="flex flex-col gap-2 opacity-50">
                   <p>Writer</p>
                   <p>Coder</p>
                   <p>Art</p>
@@ -54,10 +54,10 @@
               <!--Anchor-->
               <p>Everyone</p>
               <!--Bottom-->
-              <div class="absolute opacity-20 flex flex-col gap-2 my-2">
+              <div class="absolute my-2 flex flex-col gap-2 opacity-20">
                 <p>Coder</p>
                 <p>Art</p>
-                <div class="opacity-50 flex flex-col gap-2">
+                <div class="flex flex-col gap-2 opacity-50">
                   <p>Coder</p>
                   <p>Art</p>
                   <p>Writer</p>
@@ -70,34 +70,34 @@
           </div>
         </div>
         <!--Action buttons -->
-        <div class="min-[360]:w-72 sm:w-80 max-w-full pb-16">
-          <h1 class="text-center md:text-left text-pixl text-2xl sm:text-3xl">
+        <div class="max-w-full pb-16 min-[360]:w-72 sm:w-80">
+          <h1 class="text-pixl text-center text-2xl sm:text-3xl md:text-left">
             A place for the cool squares.
           </h1>
-          <div class="flex flex-col gap-3 mt-8 md:mt-16 md:w-68 text-center">
+          <div class="mt-8 flex flex-col gap-3 text-center md:mt-16 md:w-68">
             <a
-              class="bg-pixl-dark/50 hover:bg-pixl-dark/60 active:bg-pixl-dark/75 border border-pixl/50 hover:border-pixl/60 active:border-pixl/75 py-1.5 px-4 text-pixl"
-              href="#"
+              class="bg-pixl-dark/50 hover:bg-pixl-dark/60 active:bg-pixl-dark/75 border-pixl/50 hover:border-pixl/60 active:border-pixl/75 text-pixl border px-4 py-1.5"
+              href="/feed"
               >Sign in with Google</a
             >
 
             <a
-              class="bg-pixl-dark/50 hover:bg-pixl-dark/60 active:bg-pixl-dark/75 border border-pixl/50 hover:border-pixl/60 active:border-pixl/75 py-1.5 px-4 text-pixl"
-              href="#"
+              class="bg-pixl-dark/50 hover:bg-pixl-dark/60 active:bg-pixl-dark/75 border-pixl/50 hover:border-pixl/60 active:border-pixl/75 text-pixl border px-4 py-1.5"
+              href="/feed"
               >Sign in with Apple</a
             >
             <p>or</p>
             <a
-              class="bg-pixl hover:bg-pixl/90 active:bg-pixl/95 border border-transparent py-1.5 px-4 text-pixl-dark"
-              href="#"
+              class="bg-pixl hover:bg-pixl/90 active:bg-pixl/95 text-pixl-dark border border-transparent px-4 py-1.5"
+              href="/feed"
               >Create an account</a
             >
-            <p class="text-sm mt-12 sm:mt-16 md:mt-20 text-left">
+            <p class="mt-12 text-left text-sm sm:mt-16 md:mt-20">
               Already have account?
             </p>
             <a
-              class="bg-pixl hover:bg-pixl/90 active:bg-pixl/95 border border-transparent py-1.5 px-4 text-pixl-dark"
-              href="#"
+              class="bg-pixl hover:bg-pixl/90 active:bg-pixl/95 text-pixl-dark border border-transparent px-4 py-1.5"
+              href="/feed"
               >Sign in</a
             >
           </div>
@@ -105,15 +105,15 @@
       </div>
     </main>
 
-    <footer class="relative md:fixed md:bottom-0 md:inset-x-0 pb-3">
-      <div class="flex flex-col gap-1.5 items-center text-center text-pixl p-4">
+    <footer class="relative pb-3 md:fixed md:inset-x-0 md:bottom-0">
+      <div class="text-pixl flex flex-col items-center gap-1.5 p-4 text-center">
         <p>All Rights Reserved. Pixl Media For Everyone*</p>
-        <p class="opacity-50 text-xs">
+        <p class="text-xs opacity-50">
           *except for badgers, they're $&@*holes.
         </p>
       </div>
       <div
-        class="absolute bottom-0 h-4 inset-x-0 bg-[url(/images/white-noise.gif)]"
+        class="absolute inset-x-0 bottom-0 h-4 bg-[url(/images/white-noise.gif)]"
       ></div>
     </footer>
   </body>

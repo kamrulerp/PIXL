@@ -6,3 +6,6 @@ npm i tailwindcss @tailwindcss/vite
 
 // to run the development server
 npm run dev
+
+// to format code with Prettier and Tailwind CSS plugin
+npm i prettier prettier-plugin-tailwindcss
