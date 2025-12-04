@@ -11,8 +11,28 @@
     class="bg-pixl-dark text-pixl-light flex h-dvh gap-16 overflow-clip px-4"
   >
     <!-- Navigation-->
-    <header class="bg-pixl-light/50 my-4 w-40 shrink-0">
-      <p>Navigation</p>
+    <header class="my-4 w-40 shrink-0 pl-3.5 xl:ml-40">
+      <a href="/">
+        <img src="images/logo.png" alt="" />
+      </a>
+      <nav class="mt-10">
+        <ul class="flex flex-col gap-3.5">
+          <li><a class="hover:underline" href="#">Home</a></li>
+          <li><a class="hover:underline" href="#">Explore</a></li>
+          <!-- Active item -->
+          <li class="-ml-4 flex items-center gap-2">
+            <div class="bg-pixl size-2 shrink-0"></div>
+            <a class="hover:underline" href="#">Notifications</a>
+          </li>
+          <li><a class="hover:underline" href="#">Lists</a></li>
+          <li><a class="hover:underline" href="#">Bookmarks</a></li>
+          <li><a class="hover:underline" href="#">Jobs</a></li>
+          <li><a class="hover:underline" href="#">Communities</a></li>
+          <li><a class="hover:underline" href="#">Premium</a></li>
+          <li><a class="hover:underline" href="#">Profile</a></li>
+          <li><a class="hover:underline" href="#">More</a></li>
+        </ul>
+      </nav>
     </header>
     <!-- Feed content -->
     <main class="flex grow flex-col gap-4 overflow-y-auto py-4">
