@@ -8,34 +8,65 @@
     <title>PIXL</title>
   </head>
   <body
-    class="bg-pixl-dark text-pixl-light flex h-dvh gap-16 overflow-clip px-4"
+    class="bg-pixl-dark text-pixl-light flex gap-8 px-4 sm:h-dvh sm:overflow-clip xl:gap-16"
   >
     <!-- Navigation-->
-    <header class="my-4 w-40 shrink-0 overflow-y-auto pl-3.5 xl:ml-40">
-      <a href="/">
-        <img src="images/logo.png" alt="" />
-      </a>
-      <nav class="mt-10">
-        <ul class="flex flex-col gap-3.5">
-          <li><a class="hover:underline" href="#">Home</a></li>
-          <li><a class="hover:underline" href="#">Explore</a></li>
-          <!-- Active item -->
-          <li class="-ml-4 flex items-center gap-2">
-            <div class="bg-pixl size-2 shrink-0"></div>
-            <a class="hover:underline" href="#">Notifications</a>
-          </li>
-          <li><a class="hover:underline" href="#">Lists</a></li>
-          <li><a class="hover:underline" href="#">Bookmarks</a></li>
-          <li><a class="hover:underline" href="#">Jobs</a></li>
-          <li><a class="hover:underline" href="#">Communities</a></li>
-          <li><a class="hover:underline" href="#">Premium</a></li>
-          <li><a class="hover:underline" href="#">Profile</a></li>
-          <li><a class="hover:underline" href="#">More</a></li>
-        </ul>
-      </nav>
+    <header
+      class="my-4 hidden w-48 shrink-0 flex-col justify-between gap-8 pl-3.5 sm:flex xl:ml-40"
+    >
+      <div class="overflow-y-auto">
+        <!-- logo -->
+        <a href="/">
+          <img src="images/logo.png" alt="" />
+        </a>
+        <!-- navigation -->
+        <nav class="mt-10">
+          <ul class="flex flex-col gap-3.5">
+            <li><a class="hover:underline" href="#">Home</a></li>
+            <li><a class="hover:underline" href="#">Explore</a></li>
+            <!-- Active item -->
+            <li class="-ml-4 flex items-center gap-2">
+              <div class="bg-pixl size-2 shrink-0"></div>
+              <a class="hover:underline" href="#">Notifications</a>
+            </li>
+            <li><a class="hover:underline" href="#">Lists</a></li>
+            <li><a class="hover:underline" href="#">Bookmarks</a></li>
+            <li><a class="hover:underline" href="#">Jobs</a></li>
+            <li><a class="hover:underline" href="#">Communities</a></li>
+            <li><a class="hover:underline" href="#">Premium</a></li>
+            <li><a class="hover:underline" href="#">Profile</a></li>
+            <li><a class="hover:underline" href="#">More</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!--user control-->
+      <div class="flex h-12 gap-3.5">
+        <a href="/profile" class="shrink-0">
+          <img
+            src="/images/adrian.png"
+            alt="Avatar for adrian"
+            class="size-11 object-cover"
+          />
+        </a>
+        <div class="flex flex-col gap-1 text-sm">
+          <p class="leading-tight">_adrian</p>
+          <p class="text-pixl-light/60 leading-tight">@tudssss</p>
+        </div>
+        <button class="group flex gap-[3px] py-2" aria-label="Post options">
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+          <span
+            class="bg-pixl-light/40 group-hover:bg-pixl-light/60 size-1"
+          ></span>
+        </button>
+      </div>
     </header>
     <!-- Feed content -->
-    <main class="flex grow flex-col gap-4 overflow-y-auto px-0.5 py-4">
+    <main class="-mx-4 flex grow flex-col gap-4 overflow-y-auto px-4 py-4">
       <nav>
         <ul class="flex justify-end gap-8 text-sm">
           <li><a href="#">For you</a></li>
@@ -127,7 +158,7 @@
         <!-- feed item -->
 
         <li class="flex items-start gap-4 not-first:pt-2.5">
-          <a href="/profile">
+          <a href="/profile" class="shrink-0">
             <img
               src="/images/michael.png"
               alt="Avatar for michael"
@@ -620,9 +651,19 @@
           </div>
         </li>
       </ol>
+
+      <footer class="mt-30 ml-14">
+        <p class="text-center">That's all, folks!</p>
+        <hr class="border-pixl-light/10 my-4" />
+        <!-- white noise -->
+
+        <div class="h-20 bg-[url(/images/white-noise.gif)]"></div>
+      </footer>
     </main>
     <!-- Sidebar-->
-    <aside class="my-4 w-80 shrink-0 overflow-y-auto px-0.5">
+    <aside
+      class="-mx-4 my-4 hidden w-80 shrink-0 overflow-y-auto px-4 lg:block"
+    >
       <input
         type="text"
         placeholder="#Search an idea or pixel"
