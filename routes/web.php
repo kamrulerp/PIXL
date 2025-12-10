@@ -24,6 +24,21 @@ str,
                 'avatar' => '/images/michael.png',
                 'displayname' => 'Michael',
                 'handle' => '@mmich_jj',
+            ],
+            'replies' => [
+                [
+                    'content' => '<p>Heh -this looks just like me!</p>',
+                    'postedDateTime' => '1h',
+                    'likeCount' => 52,
+                    'replyCount' => 30,
+                    'repostCount' => 2,
+
+                    'profile' => [
+                        'avatar' => '/images/simon-chilling.png',
+                        'displayname' => 'Simon',
+                        'handle' => '@simonswiss',
+                    ],
+                ]
             ]
         ]
     ]));
@@ -49,6 +64,21 @@ str,
                 'avatar' => '/images/michael.png',
                 'displayname' => 'Michael',
                 'handle' => '@mmich_jj',
+            ],
+            'replies' => [
+                [
+                    'content' => '<p>Heh -this looks just like me!</p>',
+                    'postedDateTime' => '1h',
+                    'likeCount' => 52,
+                    'replyCount' => 30,
+                    'repostCount' => 2,
+
+                    'profile' => [
+                        'avatar' => '/images/simon-chilling.png',
+                        'displayname' => 'Simon',
+                        'handle' => '@simonswiss',
+                    ],
+                ]
             ]
         ]
     ]));
