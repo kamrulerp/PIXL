@@ -20,4 +20,12 @@ class Profile extends Model
     public function profile() : BelongsTo {
         return $this->belongsTo(User::class);
     }
+
+    public function posts() : HasMany {
+        return $this->hasMany(Post::class);
+    }
+
+    public function topLevelPosts() : HasMany {
+        return $this->posts()->whereNull('parent_id');
+    }
 }

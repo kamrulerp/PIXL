@@ -8,3 +8,5 @@ npm run build
 php artisan make:component Layout
 
 php artisan make:model Profile -mf
+
+php artisan make:model Post -mf   
