@@ -24,7 +24,7 @@ class Post extends Model
         return $this->belongsTo(Post::class, 'parent_id');
     }
 
-    public function replies() : HasMany {
+    public function replies() {
         return $this->hasMany(Post::class, 'parent_id');
     }
 
@@ -41,6 +41,15 @@ class Post extends Model
             'profile_id' => $profile->id,
             'content' => $content,
             'parent_id' => null,
+            'repost_of_id' => null,
+        ]);
+    }
+
+    public static function reply(Profile $profile, Post $original, string $content): self {
+        return static::create([
+            'profile_id' => $profile->id,
+            'content' => $content,
+            'parent_id' => $original->id,
             'repost_of_id' => null,
         ]);
     }
