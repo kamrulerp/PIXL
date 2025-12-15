@@ -16,11 +16,11 @@ class Post extends Model
         'content',
     ];
 
-    public function profile() : BelongsTo {
+    public function profile() {
         return $this->belongsTo(Profile::class);
     }
 
-    public function parent() : BelongsTo {
+    public function parent() {
         return $this->belongsTo(Post::class, 'parent_id');
     }
 
@@ -34,5 +34,14 @@ class Post extends Model
 
     public function reposts() : HasMany {
         return $this->hasMany(Post::class, 'repost_of_id');
+    }
+
+    public static function publish(Profile $profile, string $content): self {
+        return static::create([
+            'profile_id' => $profile->id,
+            'content' => $content,
+            'parent_id' => null,
+            'repost_of_id' => null,
+        ]);
     }
 }

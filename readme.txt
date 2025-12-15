@@ -9,4 +9,17 @@ php artisan make:component Layout
 
 php artisan make:model Profile -mf
 
-php artisan make:model Post -mf   
+php artisan make:model Post -mf  
+
+// install pest:
+composer require pestphp/pest --dev --with-all-dependencies
+composer require pestphp/pest-plugin-laravel --dev
+./vendor/bin/pest --init
+
+// make tests:
+php artisan make:test PostBehaviorTest
+
+// run tests:
+php artisan test
+
+// php artisan migrate
