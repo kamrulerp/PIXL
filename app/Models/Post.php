@@ -13,6 +13,7 @@ class Post extends Model
     protected $fillable = [
         'profile_id',
         'parent_id',
+        'repost_of_id',
         'content',
     ];
 
@@ -28,12 +29,16 @@ class Post extends Model
         return $this->hasMany(Post::class, 'parent_id');
     }
 
-    public function likes() : HasMany {
+    public function likes() {
         return $this->hasMany(Like::class);
     }
 
-    public function reposts() : HasMany {
+    public function reposts() {
         return $this->hasMany(Post::class, 'repost_of_id');
+    }
+
+    public function repostOf(){
+        return $this->belongsTo(Post::class, 'repost_of_id');
     }
 
     public static function publish(Profile $profile, string $content): self {
@@ -51,6 +56,15 @@ class Post extends Model
             'content' => $content,
             'parent_id' => $original->id,
             'repost_of_id' => null,
+        ]);
+    }
+
+    public static function repost(Profile $profile, Post $original, string $content = null): self {
+        return static::create([
+            'profile_id' => $profile->id,
+            'content' => $content,
+            'parent_id' => null,
+            'repost_of_id' => $original->id,
         ]);
     }
 }
