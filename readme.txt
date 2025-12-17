@@ -19,6 +19,7 @@ composer require pestphp/pest-plugin-laravel --dev
 // make tests:
 php artisan make:test PostBehaviorTest
 php artisan make:test LikeBehaviorTest
+php artisan make:test FollowBehaviorTest
 
 // run tests:
 php artisan test

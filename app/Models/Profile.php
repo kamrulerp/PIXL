@@ -33,7 +33,28 @@ class Profile extends Model
         return $this->hasMany(Like::class);
     }
 
-    public function following() : BelongsToMany {
-        return $this->belongsToMany(Profile::class, 'follows', 'follower_profile_id', 'following_profile_id');
+    public function follow(Profile $profile): void
+    {
+        Follow::createFollow($this, $profile);
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(
+            Profile::class,
+            'follows',
+            'following_profile_id',
+            'follower_profile_id',
+        );
+    }
+
+    public function followings()
+    {
+        return $this->belongsToMany(
+            Profile::class,
+            'follows',
+            'follower_profile_id',
+            'following_profile_id',
+        );
     }
 }
