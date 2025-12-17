@@ -29,7 +29,7 @@ class Profile extends Model
         return $this->posts()->whereNull('parent_id');
     }
 
-    public function likes() : HasMany {
+    public function likes() {
         return $this->hasMany(Like::class);
     }
 
