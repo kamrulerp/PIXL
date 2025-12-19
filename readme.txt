@@ -25,3 +25,9 @@ php artisan make:test FollowBehaviorTest
 php artisan test
 
 // php artisan migrate
+
+// seed database:
+php artisan db:seed
+
+// migrate fresh with seed:
+php artisan migrate:fresh --seed
