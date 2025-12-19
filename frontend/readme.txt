@@ -9,3 +9,6 @@ npm run dev
 
 // to format code with Prettier and Tailwind CSS plugin
 npm i prettier prettier-plugin-tailwindcss
+
+// to seed the database with initial data
+php artisan db:seed
