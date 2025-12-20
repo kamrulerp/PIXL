@@ -31,3 +31,9 @@ php artisan db:seed
 
 // migrate fresh with seed:
 php artisan migrate:fresh --seed
+
+// make post component:
+php artisan make:component Post
+
+// make reply component with class:
+php artisan make:component Reply
