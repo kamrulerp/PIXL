@@ -14,7 +14,7 @@ class Reply extends Component
      */
     public function __construct(
         public Post $post,
-        public bool $showEngagement = true,
+        public bool $showEngagement = false,
         public bool $showReplies = false
     )
     {

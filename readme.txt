@@ -37,3 +37,5 @@ php artisan make:component Post
 
 // make reply component with class:
 php artisan make:component Reply
+
+php artisan make:component Profile/Header --view
