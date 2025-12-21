@@ -39,3 +39,5 @@ php artisan make:component Post
 php artisan make:component Reply
 
 php artisan make:component Profile/Header --view
+
+php artisan make:controller PostController

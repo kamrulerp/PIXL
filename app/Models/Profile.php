@@ -21,11 +21,11 @@ class Profile extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function posts() : HasMany {
+    public function posts() {
         return $this->hasMany(Post::class);
     }
 
-    public function topLevelPosts() : HasMany {
+    public function topLevelPosts() {
         return $this->posts()->whereNull('parent_id');
     }
 
