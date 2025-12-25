@@ -4,8 +4,28 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/dev/login', function(){
+    $user = User::inRandomOrder()->first();
+
+    Auth::login($user);
+    request()->session()->regenerate();
+
+    return redirect()->intended(route('profile.show', $user->profile));
+});
+
+Route::get('/dev/logout', function(){
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect()->intended('/feed');
 });
 
 Route::get('/feed', function () {

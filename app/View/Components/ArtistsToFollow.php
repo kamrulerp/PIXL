@@ -5,6 +5,8 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Profile;
+use Illuminate\Support\Facades\Auth;
 
 class ArtistsToFollow extends Component
 {
@@ -21,12 +23,19 @@ class ArtistsToFollow extends Component
      */
     public function render(): View|Closure|string
     {
-        $artists = [
-            ['img' => 'alessia.png', 'name' => 'alessia_draws_task'],
-            ['img' => 'anne.png', 'name' => 'just_anne'],
-            ['img' => 'mr-anderson.png', 'name' => 'Mr. Anderson'],
-            ['img' => 'michael.png', 'name' => 'Michael']
-        ];
-        return view('components.artists-to-follow', compact('artists'));
+        if(Auth::check()){
+            $profiles = Auth::user()->profile;
+
+            $query = Profile::whereDoesntHave('followers', fn($q) => $q->where('follower_profile_id', $profiles->id))
+            ->where('id', '!=', $profiles->id);
+
+        }else{
+            $query = Profile::query();
+        }
+        $profiles = $query->inRandomOrder()
+                ->limit(4)
+                ->get();
+
+        return view('components.artists-to-follow', compact('profiles'));
     }
 }
