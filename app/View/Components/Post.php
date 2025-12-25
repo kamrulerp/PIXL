@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 
 class Post extends Component
 {
+    private PostModel $original;
     /**
      * Create a new component instance.
      */
@@ -18,6 +19,8 @@ class Post extends Component
         public bool $showReplies = false
     )
     {
+        $this->original = $post;
+        $this->post = $post->isRepost() && $post->content == null ? $post->repostOf : $post;
     }
 
     /**

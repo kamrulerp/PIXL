@@ -57,7 +57,7 @@
                 
                 <!-- like button -->
                 <div class="flex items-center gap-1">
-                    <button aria-label="Like" class="hover:text-pixl">
+                    <button aria-label="Like" @class(['text-pixl => $post->has_liked']) class="hover:text-pixl">
                         <svg viewBox="0 0 20 20" class="h-5 w-5 fill-current">
                         <path
                             d="M5.75837 1.59375H2.90332V4.48449H5.75837V1.59375Z"
@@ -103,11 +103,11 @@
                         ></path>
                         </svg>
                     </button>
-                    <span class="text-sm">{{ $post->likes_count }}</span>
+                    <span @class(['text-pixl => $post->has_liked']) class="text-sm">{{ $post->likes_count }}</span>
                 </div>
                 <!-- Comment -->
                 <div class="flex items-center gap-1">
-                    <button aria-label="Comment" class="hover:text-pixl">
+                    <button aria-label="Comment" @class(['text-pixl => $post->has_replied']) class="hover:text-pixl">
                         <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
                         <path d="M15 2H5V4H15V2Z" class="fill-icon-btn"></path>
                         <path d="M17 4H15V6H17V4Z" class="fill-icon-btn"></path>
@@ -134,11 +134,11 @@
                         ></path>
                         </svg>
                     </button>
-                    <span class="text-sm">{{ $post->replies_count }}</span>
+                    <span @class(['text-pixl => $post->has_replied']) class="text-sm">{{ $post->replies_count }}</span>
                 </div>
                 <!-- Re-post -->
                 <div class="flex items-center gap-1">
-                    <button aria-label="Re-post" class="hover:text-pixl">
+                    <button aria-label="Re-post" @class(['text-pixl => $post->has_reposted']) class="hover:text-pixl">
                         <svg
                         class="h-5 w-5 fill-current"
                         viewBox="0 0 20 20"
@@ -162,7 +162,7 @@
                         <path d="M3 3H1V17H3V3Z" class="fill-icon"></path>
                         </svg>
                     </button>
-                    <span class="text-sm">{{ $post->reposts_count }}</span>
+                    <span @class(['text-pixl => $post->has_reposted']) class="text-sm">{{ $post->reposts_count }}</span>
                 </div>
                 
             </div>
